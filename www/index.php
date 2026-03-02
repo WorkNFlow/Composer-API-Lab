@@ -1,4 +1,16 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+require_once 'UserInfo.php';
+$info = UserInfo::getInfo();
+
+echo "<h3>Информация о пользователе:</h3>";
+foreach ($info as $key => $val) {
+    echo htmlspecialchars($key) . ': ' . htmlspecialchars($val) . '<br>';
+}
+
+
+?>
+
 
 <?php if(isset($_SESSION['name'])): ?>
     <p>Данные из сессии:</p>
@@ -26,5 +38,7 @@
     <h3>Данные из API:</h3>
     <pre><?= print_r($_SESSION['api_data'], true) ?></pre>
 <?php endif; ?>
+
+
 
 
