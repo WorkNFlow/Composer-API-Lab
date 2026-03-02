@@ -17,8 +17,19 @@ if(!empty($errors)){
     exit();
 }
 
+require_once 'ApiClient.php';
+$api = new ApiClient();
+
+$url = 'https://api.tvmaze.com/shows';
+$apiData = $api->request($url);
+
+$_SESSION['api_data'] = $apiData;
+
+
 $line = $name . ";" . $email . "\n";
 file_put_contents("data.txt", $line, FILE_APPEND);
 
 header("Location: index.php");
 exit();
+
+

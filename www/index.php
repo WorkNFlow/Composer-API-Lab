@@ -22,3 +22,9 @@
     <?php unset($_SESSION['errors']); ?>
 <?php endif; ?>
 
+<?php if (isset($_SESSION['api_data'])): ?>
+    <h3>Данные из API:</h3>
+    <pre><?= print_r($_SESSION['api_data'], true) ?></pre>
+<?php endif; ?>
+
+
