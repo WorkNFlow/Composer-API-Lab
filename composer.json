@@ -1,0 +1,14 @@
+{
+    "name": "semyonlyam/4.composer-api",
+    "description": "WebLab",
+    "autoload": {
+        "psr-4": {
+            "Semyonlyam\\4ComposerApi\\": "src/"
+        }
+    },
+    "authors": [
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    }
+}
